@@ -1,0 +1,39 @@
+{
+  "name": "ts-boilerplate",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "build": "tsc --project tsconfig.json",
+    "build:watch": "npm run build -- --watch",
+    "start": "node build/main.js",
+    "start:watch": "nodemon build/main.js --log",
+    "dev": "cross-env NODE_ENV=development concurrently \"npm run build:watch\" \"npm run start:watch\""
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/koa-bodyparser": "^4.3.0",
+    "@types/koa-router": "^7.4.0",
+    "@types/mongoose": "^5.7.8",
+    "@types/node": "^13.9.8",
+    "@typescript-eslint/eslint-plugin": "^2.26.0",
+    "concurrently": "^5.1.0",
+    "cross-env": "^7.0.2",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-typescript": "^7.2.0",
+    "eslint-import-resolver-alias": "^1.1.2",
+    "eslint-plugin-import": "^2.20.2",
+    "nodemon": "^2.0.2"
+  },
+  "dependencies": {
+    "@koa/cors": "^3.0.0",
+    "koa": "^2.11.0",
+    "koa-bodyparser": "^4.3.0",
+    "koa-router": "^8.0.8",
+    "koa-swagger-decorator": "^1.6.1",
+    "mongoose": "^5.9.7",
+    "reflect-metadata": "^0.1.13",
+    "typescript": "^3.8.3"
+  }
+}
