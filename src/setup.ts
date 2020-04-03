@@ -8,8 +8,7 @@ export default async function setup() {
    /**
     * Setup repo.
     */
-   const MONGODB_URI = 'mongodb://localhost:27017/node-boilerplate';
-   await setupRepo(MONGODB_URI);
+   await setupRepo();
 
    /**
     * Dependency inject all of the core modules.

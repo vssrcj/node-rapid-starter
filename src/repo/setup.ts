@@ -1,19 +1,16 @@
 import { connect } from 'mongoose';
 import 'reflect-metadata';
 
-export default async function setupRepository(connectionString: string) {
-   const { NODE_ENV } = process.env;
+export default async function setupRepository() {
+   const { NODE_ENV, MONGODB_URI } = process.env;
 
    try {
       const connection = await connect(
-         connectionString,
+         MONGODB_URI,
          { useNewUrlParser: true, useUnifiedTopology: true },
       );
-      if (NODE_ENV === 'development') {
-         console.log('connected to mongo dev');
-      } else {
-         console.log('connected to mongo prod');
-      }
+
+      console.log(`connected to mongo ${NODE_ENV}`);
 
       connection.set('useFindAndModify', false);
       return connection;

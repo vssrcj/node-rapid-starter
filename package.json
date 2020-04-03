@@ -8,11 +8,13 @@
     "build:watch": "npm run build -- --watch",
     "start": "node build/main.js",
     "start:watch": "nodemon build/main.js --log",
-    "dev": "cross-env NODE_ENV=development concurrently \"npm run build:watch\" \"npm run start:watch\""
+    "dev": "cross-env NODE_ENV=development MONGODB_URI=mongodb://localhost:27017/node-rapid-starter concurrently \"npm run build:watch\" \"npm run start:watch\"",
+		"test": "cross-env NODE_ENV=test MONGODB_URI=mongodb://localhost:27017/node-rapid-starter-test jest"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/jest": "^25.1.5",
     "@types/koa-bodyparser": "^4.3.0",
     "@types/koa-router": "^7.4.0",
     "@types/mongoose": "^5.7.8",
@@ -24,7 +26,9 @@
     "eslint-config-airbnb-typescript": "^7.2.0",
     "eslint-import-resolver-alias": "^1.1.2",
     "eslint-plugin-import": "^2.20.2",
-    "nodemon": "^2.0.2"
+    "jest": "^25.2.7",
+    "nodemon": "^2.0.2",
+    "ts-jest": "^25.3.0"
   },
   "dependencies": {
     "@koa/cors": "^3.0.0",
